@@ -32,6 +32,25 @@
     let isVisible = false;
     let rafId = null;
 
+    const chapters = Array.from(
+      section.querySelectorAll(".scroll-video__chapter")
+    ).map((el) => ({
+      el,
+      start: parseFloat(el.dataset.start),
+      end: parseFloat(el.dataset.end),
+      active: false,
+    }));
+
+    function updateChapters(progress) {
+      for (const c of chapters) {
+        const shouldBeActive = progress >= c.start && progress < c.end;
+        if (shouldBeActive !== c.active) {
+          c.el.classList.toggle("is-active", shouldBeActive);
+          c.active = shouldBeActive;
+        }
+      }
+    }
+
     // --- Image preloader (batched) ---
     function loadImage(src) {
       return new Promise((resolve, reject) => {
@@ -106,6 +125,9 @@
       if (frameIndex !== currentFrame) {
         drawFrame(frameIndex);
       }
+
+      updateChapters(progress);
+      section.style.setProperty("--sv-progress", progress.toFixed(3));
     }
 
     // --- rAF scroll loop (only active when section is visible) ---

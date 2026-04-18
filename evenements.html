@@ -103,6 +103,43 @@
       </div>
     </section>
 
+    <section class="section scroll-video" id="scroll-video"
+      style="height: calc(5 * 100vh)"
+      data-frame-dir="assets/frames/scroll-video"
+      data-frame-count="61"
+      data-frame-pad="4"
+      data-frame-ext="webp"
+      aria-label="Animation vidéo défilante de la Color Run">
+      <div class="scroll-video__sticky">
+        <canvas class="scroll-video__canvas" aria-hidden="true"></canvas>
+        <div class="scroll-video__loading" aria-live="polite">
+          <div class="scroll-video__loading-bar"></div>
+          <span class="scroll-video__loading-text">Chargement de l'animation…</span>
+        </div>
+        <div class="scroll-video__overlay" aria-hidden="true">
+          <article class="scroll-video__chapter" data-start="0" data-end="0.25">
+            <span class="scroll-video__eyebrow">Color Run Solidaire</span>
+            <p class="scroll-video__headline">5 km. 4 stations de couleurs. 1 seule cause.</p>
+          </article>
+          <article class="scroll-video__chapter" data-start="0.25" data-end="0.50">
+            <span class="scroll-video__eyebrow">Ensemble contre la leucémie</span>
+            <p class="scroll-video__headline">Chaque foulée, un pas de plus vers la guérison.</p>
+          </article>
+          <article class="scroll-video__chapter" data-start="0.50" data-end="0.75">
+            <span class="scroll-video__eyebrow">Tous les niveaux, dès 6 ans</span>
+            <p class="scroll-video__headline">Rejoignez plus de 5 000 coureurs en famille.</p>
+          </article>
+          <article class="scroll-video__chapter" data-start="0.75" data-end="1.01">
+            <span class="scroll-video__eyebrow">Inscriptions ouvertes</span>
+            <p class="scroll-video__headline">Rendez-vous le 14 juin 2026<br>au Parc de la Villette.</p>
+          </article>
+        </div>
+        <video class="scroll-video__fallback" muted playsinline autoplay loop>
+          <source src="assets/video/color_run.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
     <section class="section section--alt">
       <div class="container">
         <div class="center" style="max-width:620px;margin-inline:auto;">
@@ -223,5 +260,6 @@
 
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/a11y.js" defer></script>
+  <script src="assets/js/scroll-video.js" defer></script>
 </body>
 </html>
