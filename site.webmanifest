@@ -1,0 +1,13 @@
+{
+  "name": "Pour (F) La Vie",
+  "short_name": "Pour (F) La Vie",
+  "description": "Association engagée contre la leucémie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E94B8A",
+  "lang": "fr",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
